@@ -1,2 +1,8 @@
 venv
 plan.md
+.DS_Store
+*.log
+.env
+data/raw/
+data/processed/
+data/pairs/
