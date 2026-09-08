@@ -8,3 +8,6 @@ data/processed/
 data/pairs/
 test
 src/run_scorecard.py
+
+__pycache__/
+*.pyc
