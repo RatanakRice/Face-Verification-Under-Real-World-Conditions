@@ -37,8 +37,7 @@ def parse_lfw_pairs(pairs_path: Path):
 
 
 def _identity_of(filename: str) -> str:
-    """Name portion of a CALFW/CPLFW filename, i.e. everything before the
-    trailing "_<index>.jpg" (e.g. "Carl_Reiner_0001.jpg" -> "Carl_Reiner")."""
+    """Name part of a filename: "Carl_Reiner_0001.jpg" -> "Carl_Reiner"."""
     return re.sub(r"_\d+\.(jpg|jpeg|png)$", "", filename, flags=re.IGNORECASE)
 
 
@@ -46,15 +45,9 @@ def parse_flat_pairs(pairs_path: Path):
     """
     CALFW/CPLFW format: two consecutive lines per pair, "filename number" each.
 
-    The trailing number is NOT a match/non-match label:
-      - CALFW: cross-validation fold index (1-10) for genuine pairs, 0 for impostors.
-      - CPLFW: 1 for genuine pairs, 0 for impostors (looks like a label, but isn't
-        one we should rely on across datasets).
-
-    Match vs non-match is derived from the filenames instead: a pair is a match
-    iff both images belong to the same identity (same name portion). The file is
-    also expected to be ordered as all genuine pairs first, then all impostors;
-    we cross-check that and warn (rather than silently trust it) if it breaks.
+    The trailing number is a cross-validation fold index, not a label, so the
+    match label is taken from the filenames: a pair matches when both images
+    belong to the same identity.
     """
     with open(pairs_path) as f:
         lines = [line.strip() for line in f if line.strip()]
@@ -66,22 +59,16 @@ def parse_flat_pairs(pairs_path: Path):
         label = 1 if _identity_of(file1) == _identity_of(file2) else 0
         pairs.append((file1, file2, label))
 
-    labels = [label for _, _, label in pairs]
-    num_match = sum(labels)
-    if num_match == 0 or num_match == len(labels):
-        raise ValueError(
-            f"{pairs_path}: derived all pairs as the same class "
-            f"({num_match}/{len(labels)} matches); filename parsing is likely wrong."
-        )
-    # Expected layout: matches first, then non-matches. Warn if violated.
-    first_nonmatch = next((j for j, v in enumerate(labels) if v == 0), len(labels))
-    if any(labels[j] == 1 for j in range(first_nonmatch, len(labels))):
-        print(f"  (warning: {pairs_path} is not ordered matches-then-nonmatches; "
-              f"labels derived from filenames anyway)")
+    # Sanity check: a real pairs file has both classes. All-one-class means the
+    # filename parsing broke, and roc_curve would fail further down anyway.
+    num_match = sum(label for _, _, label in pairs)
+    if num_match == 0 or num_match == len(pairs):
+        raise ValueError(f"{pairs_path}: every pair parsed as the same class; check the filename format.")
     return pairs
 
 
 def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:
+    """Cosine similarity between two embedding vectors."""
     return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b)))
 
 
@@ -111,14 +98,21 @@ def find_eer_threshold(similarities: np.ndarray, labels: np.ndarray) -> float:
 
 
 def compute_far_frr(similarities: np.ndarray, labels: np.ndarray, threshold: float):
-    """FAR = wrongly-accepted non-matches. FRR = wrongly-rejected matches."""
-    far_values, tpr_values, thresholds = roc_curve(labels, similarities)
-    frr_values = 1 - tpr_values
-    closest_index = np.argmin(np.abs(thresholds - threshold))
-    return float(far_values[closest_index]), float(frr_values[closest_index])
+    """
+    FAR = fraction of non-match pairs wrongly accepted (similarity >= threshold).
+    FRR = fraction of match pairs wrongly rejected (similarity < threshold).
+
+    Counted directly at the given threshold, not read off ROC sample points.
+    """
+    non_match_sims = similarities[labels == 0]
+    match_sims = similarities[labels == 1]
+    far = float(np.mean(non_match_sims >= threshold))
+    frr = float(np.mean(match_sims < threshold))
+    return far, frr
 
 
 def compute_accuracy(similarities: np.ndarray, labels: np.ndarray, threshold: float) -> float:
+    """Fraction of pairs classified correctly at this threshold."""
     predictions = similarities >= threshold
     return float(accuracy_score(labels, predictions))
 
@@ -168,3 +162,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# run: python src/compare.py --pairs data/pairs/pairs_LFW.txt --pairs-format lfw --embeddings data/processed/embeddings/lfw_arcface.json
