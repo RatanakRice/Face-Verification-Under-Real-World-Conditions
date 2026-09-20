@@ -97,4 +97,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# run: python src/detect_align.py --checkpoint model/yolov8n-face-derronqi.pt --input data/raw/lfw --output data/processed/aligned/lfw
+# Usage: python src/detect_align.py --checkpoint model/yolov8n-face-derronqi.pt --input data/raw/lfw --output data/processed/aligned/lfw

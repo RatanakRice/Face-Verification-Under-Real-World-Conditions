@@ -107,4 +107,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# run: python src/embed.py --input data/processed/aligned/lfw --output data/processed/embeddings --name lfw
+# Usage: python src/embed.py --input data/processed/aligned/lfw --output data/processed/embeddings --name lfw

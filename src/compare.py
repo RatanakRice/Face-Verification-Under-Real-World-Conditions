@@ -163,4 +163,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# run: python src/compare.py --pairs data/pairs/pairs_LFW.txt --pairs-format lfw --embeddings data/processed/embeddings/lfw_arcface.json
+# Usage: python src/compare.py --pairs data/pairs/pairs_LFW.txt --pairs-format lfw --embeddings data/processed/embeddings/lfw_arcface.json

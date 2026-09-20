@@ -60,4 +60,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# run: python src/lighting.py --input data/processed/aligned/lfw --output-root data/processed/lighting/lfw --gamma-values 1.8
+# Usage: python src/lighting.py --input data/processed/aligned/lfw --output-root data/processed/lighting/lfw --gamma-values 1.8
