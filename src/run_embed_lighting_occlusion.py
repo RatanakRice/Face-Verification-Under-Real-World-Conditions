@@ -1,22 +1,3 @@
-"""
-Embed every lighting- and occlusion-altered folder for all 6 datasets
-(lfw, calfw, cplfw, lfw_bigger, calfw_bigger, cplfw_bigger):
-3 gamma values + 2 occlusion severities each = 18 lighting + 12 occlusion
-= 30 folders total.
-
-Loads the ArcFace model once and reuses it across all 30 folders. Runs
-sequentially in one process (CPU-bound, dlib-bound at ~20 img/s, no benefit
-to parallelizing). Output mirrors the baseline embeddings layout but under
-lighting/ and occlusion/ subdirectories, so baseline files
-(data/processed/embeddings/lfw_arcface.json etc.) are untouched:
-
-    data/processed/embeddings/lighting/{dataset}_gamma_{gamma}_{model}.json
-    data/processed/embeddings/occlusion/{dataset}_{side}_{mask_fraction}_{model}.json
-
-Usage:
-    python src/run_embed_lighting_occlusion.py
-"""
-
 from pathlib import Path
 
 from embed import load_arcface_model, process_folder as embed_folder
@@ -53,4 +34,4 @@ def run_all():
 if __name__ == "__main__":
     run_all()
 
-# run: python src/run_embed_lighting_occlusion.py
+# Usage: python src/run_embed_lighting_occlusion.py
