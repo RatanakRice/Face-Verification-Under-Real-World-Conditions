@@ -32,16 +32,25 @@ def detect_face(model: YOLO, image: np.ndarray):
     """
     Run detection on one image.
 
-    Returns the 5 landmark points of the highest-confidence face,
-    or None if no face (or no landmarks) is found. Alignment only
-    needs the landmarks, so the bounding box is not returned.
+    Returns the 5 landmark points of the largest detected face, or None if no
+    face (or no landmarks) is found. Alignment only needs the landmarks, so
+    the bounding box is not returned.
+
+    Selecting by box area rather than confidence: these datasets are single
+    portrait photos, so the subject is essentially always the largest face in
+    frame. A small bystander or photo-edge sliver of a second face can score
+    a marginally higher confidence than the subject's own (clear, centered)
+    face purely from model noise, which previously picked that degenerate
+    edge-clipped face and produced a wildly misaligned crop.
     """
     results = model.predict(image, verbose=False)[0]
 
     if len(results.boxes) == 0 or getattr(results, "keypoints", None) is None:
         return None
 
-    best_idx = int(results.boxes.conf.argmax())
+    boxes = results.boxes.xyxy.cpu().numpy()
+    areas = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
+    best_idx = int(areas.argmax())
     kpts = results.keypoints.xy[best_idx].cpu().numpy()
     if kpts.shape[0] < 5:
         return None
