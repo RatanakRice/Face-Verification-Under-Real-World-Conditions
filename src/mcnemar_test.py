@@ -35,7 +35,7 @@ PAIRS_DIR = Path("data/pairs")
 EMBEDDINGS_DIR = Path("data2/embeddings")
 
 DATASETS = ["lfw_bigger", "calfw_bigger", "cplfw_bigger"]
-GAMMA_VALUES = [0.4, 1.8, 2.5]
+from constants import GAMMA_VALUES
 MODELS = ["arcface", "face_recognition"]
 
 PAIRS_BY_FAMILY = {

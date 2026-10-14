@@ -7,7 +7,7 @@ from compare import score_condition
 PAIRS_DIR = Path("data/pairs")
 
 DATASETS = ["lfw_bigger", "calfw_bigger", "cplfw_bigger"]
-GAMMA_VALUES = [0.4, 1.8, 2.5]
+from constants import GAMMA_VALUES
 OCCLUSION_CONFIGS = ["block_15_30", "block_30_30"]
 MODELS = ["arcface", "face_recognition"]
 

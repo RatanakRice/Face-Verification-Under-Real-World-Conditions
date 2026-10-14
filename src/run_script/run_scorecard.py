@@ -54,4 +54,4 @@ def run_all():
 if __name__ == "__main__":
     run_all()
 
-# Usage: python src/run_scorecard.py
+# Usage: PYTHONPATH=src python3 src/run_script/run_scorecard.py

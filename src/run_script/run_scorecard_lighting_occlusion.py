@@ -8,7 +8,7 @@ PAIRS_DIR = Path("data/pairs")
 OUTPUT_PATH = Path("data/processed/scorecard_lighting_occlusion.txt")
 
 DATASETS = ["lfw", "calfw", "cplfw", "lfw_bigger", "calfw_bigger", "cplfw_bigger"]
-GAMMA_VALUES = [0.4, 1.8, 2.5]
+from constants import GAMMA_VALUES
 OCCLUSION_CONFIGS = [("random", 0.25), ("random", 0.5)]
 MODELS = ["arcface", "face_recognition"]
 
@@ -74,4 +74,4 @@ def run_all():
 if __name__ == "__main__":
     run_all()
 
-# Usage: python src/run_scorecard_lighting_occlusion.py
+# Usage: PYTHONPATH=src python3 src/run_script/run_scorecard_lighting_occlusion.py

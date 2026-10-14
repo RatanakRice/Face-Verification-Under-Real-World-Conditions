@@ -9,7 +9,7 @@ OCCLUSION_DIR = Path("data/processed/occlusion")
 
 DATASETS = ["calfw", "cplfw", "lfw_bigger", "calfw_bigger", "cplfw_bigger"]
 
-GAMMA_VALUES = [0.4, 1.8, 2.5]
+from constants import GAMMA_VALUES
 OCCLUSION_CONFIGS = [("random", 0.25), ("random", 0.5)]
 
 
@@ -35,4 +35,4 @@ def run_all():
 if __name__ == "__main__":
     run_all()
 
-# Usage: python src/run_lighting_occlusion.py
+# Usage: PYTHONPATH=src python3 src/run_script/run_lighting_occlusion.py
