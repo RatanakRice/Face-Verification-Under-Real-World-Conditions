@@ -52,7 +52,7 @@ def embed_face_recognition(image: np.ndarray):
     return encodings[0]
 
 
-def process_folder(arcface_model, input_dir: Path, output_dir: Path, dataset_name: str):
+def process_folder(arcface_model, input_dir: Path, output_dir: Path, dataset_name: str, file_prefix: str = None):
     """Embed every image in input_dir with both models, saving one JSON file per model."""
     output_dir.mkdir(parents=True, exist_ok=True)
     image_paths = sorted(input_dir.glob("*.jpg"))
@@ -76,8 +76,10 @@ def process_folder(arcface_model, input_dir: Path, output_dir: Path, dataset_nam
         else:
             face_rec_embeddings[image_path.name] = face_rec_vector.tolist()
 
-    arcface_path = output_dir / f"{dataset_name}_arcface.json"
-    face_rec_path = output_dir / f"{dataset_name}_face_recognition.json"
+    name = dataset_name if file_prefix is None else file_prefix
+    prefix = f"{name}_" if name else ""
+    arcface_path = output_dir / f"{prefix}arcface.json"
+    face_rec_path = output_dir / f"{prefix}face_recognition.json"
 
     with open(arcface_path, "w") as f:
         json.dump(arcface_embeddings, f)
