@@ -1,0 +1,9 @@
+=== arcface (threshold=0.1492) ===
+lfw_bigger     baseline=0.9913  degraded=0.9920 (dip=-0.0007)  mirror-fixed=0.9888 (recovered=-0.0032,   nan% of dip)  FAR 0.0063->0.0090  FRR 0.0097->0.0133
+calfw_bigger   baseline=0.9385  degraded=0.9308 (dip=+0.0077)  mirror-fixed=0.9261 (recovered=-0.0047,   -61% of dip)  FAR 0.0650->0.0574  FRR 0.0734->0.0904
+cplfw_bigger   baseline=0.8992  degraded=0.8622 (dip=+0.0371)  mirror-fixed=0.8485 (recovered=-0.0137,   -37% of dip)  FAR 0.0783->0.0720  FRR 0.1974->0.2310
+
+=== face_recognition (threshold=0.8959) ===
+lfw_bigger     baseline=0.9757  degraded=0.8938 (dip=+0.0818)  mirror-fixed=0.9018 (recovered=+0.0080,    10% of dip)  FAR 0.1117->0.0300  FRR 0.1007->0.1663
+calfw_bigger   baseline=0.8436  degraded=0.6780 (dip=+0.1656)  mirror-fixed=0.7580 (recovered=+0.0800,    48% of dip)  FAR 0.4293->0.1741  FRR 0.2147->0.3098
+cplfw_bigger   baseline=0.7082  degraded=0.5751 (dip=+0.1332)  mirror-fixed=0.6043 (recovered=+0.0293,    22% of dip)  FAR 0.4749->0.3052  FRR 0.3750->0.4861

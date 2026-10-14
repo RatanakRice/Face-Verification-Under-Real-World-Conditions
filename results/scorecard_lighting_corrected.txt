@@ -1,0 +1,27 @@
+=== arcface (threshold=0.1492) ===
+-- lfw_bigger (baseline acc=0.9913) --
+   gamma=0.4  degraded=0.9907 (dip=+0.0007)  corrected=0.9905 (recovered=-0.0002,   -25% of dip)  FAR 0.0097->0.0097  FRR 0.0090->0.0093
+   gamma=1.8  degraded=0.9913 (dip=+0.0000)  corrected=0.9912 (recovered=-0.0002,   nan% of dip)  FAR 0.0083->0.0083  FRR 0.0090->0.0093
+   gamma=2.5  degraded=0.9910 (dip=+0.0003)  corrected=0.9908 (recovered=-0.0002,   -50% of dip)  FAR 0.0090->0.0090  FRR 0.0090->0.0093
+-- calfw_bigger (baseline acc=0.9385) --
+   gamma=0.4  degraded=0.9375 (dip=+0.0010)  corrected=0.9378 (recovered=+0.0003,    33% of dip)  FAR 0.0594->0.0590  FRR 0.0657->0.0654
+   gamma=1.8  degraded=0.9358 (dip=+0.0027)  corrected=0.9380 (recovered=+0.0022,    81% of dip)  FAR 0.0624->0.0587  FRR 0.0660->0.0654
+   gamma=2.5  degraded=0.9346 (dip=+0.0038)  corrected=0.9378 (recovered=+0.0032,    83% of dip)  FAR 0.0650->0.0587  FRR 0.0657->0.0657
+-- cplfw_bigger (baseline acc=0.8992) --
+   gamma=0.4  degraded=0.8921 (dip=+0.0071)  corrected=0.8956 (recovered=+0.0035,    49% of dip)  FAR 0.0811->0.0797  FRR 0.1347->0.1292
+   gamma=1.8  degraded=0.8978 (dip=+0.0014)  corrected=0.8975 (recovered=-0.0003,   -25% of dip)  FAR 0.0779->0.0748  FRR 0.1264->0.1302
+   gamma=2.5  degraded=0.8947 (dip=+0.0045)  corrected=0.8954 (recovered=+0.0007,    15% of dip)  FAR 0.0783->0.0755  FRR 0.1323->0.1337
+
+=== face_recognition (threshold=0.8959) ===
+-- lfw_bigger (baseline acc=0.9757) --
+   gamma=0.4  degraded=0.9640 (dip=+0.0117)  corrected=0.9715 (recovered=+0.0075,    64% of dip)  FAR 0.0357->0.0277  FRR 0.0363->0.0293
+   gamma=1.8  degraded=0.9738 (dip=+0.0018)  corrected=0.9745 (recovered=+0.0007,    36% of dip)  FAR 0.0267->0.0257  FRR 0.0257->0.0253
+   gamma=2.5  degraded=0.9647 (dip=+0.0110)  corrected=0.9745 (recovered=+0.0098,    89% of dip)  FAR 0.0363->0.0260  FRR 0.0343->0.0250
+-- calfw_bigger (baseline acc=0.8436) --
+   gamma=0.4  degraded=0.8154 (dip=+0.0282)  corrected=0.8383 (recovered=+0.0228,    81% of dip)  FAR 0.2718->0.2385  FRR 0.0974->0.0850
+   gamma=1.8  degraded=0.8341 (dip=+0.0095)  corrected=0.8426 (recovered=+0.0085,    89% of dip)  FAR 0.2495->0.2312  FRR 0.0824->0.0837
+   gamma=2.5  degraded=0.8177 (dip=+0.0258)  corrected=0.8423 (recovered=+0.0245,    95% of dip)  FAR 0.2799->0.2335  FRR 0.0847->0.0820
+-- cplfw_bigger (baseline acc=0.7082) --
+   gamma=0.4  degraded=0.6892 (dip=+0.0190)  corrected=0.7018 (recovered=+0.0126,    66% of dip)  FAR 0.3845->0.3460  FRR 0.2372->0.2503
+   gamma=1.8  degraded=0.6978 (dip=+0.0104)  corrected=0.7034 (recovered=+0.0055,    53% of dip)  FAR 0.3467->0.3349  FRR 0.2576->0.2583
+   gamma=2.5  degraded=0.6824 (dip=+0.0258)  corrected=0.7025 (recovered=+0.0201,    78% of dip)  FAR 0.3654->0.3422  FRR 0.2697->0.2528

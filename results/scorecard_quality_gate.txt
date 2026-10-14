@@ -1,0 +1,33 @@
+=== arcface (threshold=0.1492) ===
+lfw_bigger     aligned      : baseline=0.9913  gate=0.9910 (-0.0003)  n=5997
+lfw_bigger     gamma=0.4  : degraded=0.9907 (dip=+0.0007)  gate=0.9905 (recovered=-0.0002, -25% of dip)  n=6000
+lfw_bigger     gamma=1.8  : degraded=0.9913 (dip=+0.0000)  gate=0.9912 (recovered=-0.0002, nan% of dip)  n=5993
+lfw_bigger     gamma=2.5  : degraded=0.9910 (dip=+0.0003)  gate=0.9910 (recovered=-0.0000, -9% of dip)  n=5980
+lfw_bigger     occlusion40% : degraded=0.9920 (dip=-0.0007)  gate=0.9894 (recovered=-0.0026, nan% of dip)  n=5770
+calfw_bigger   aligned      : baseline=0.9385  gate=0.9391 (+0.0006)  n=5990
+calfw_bigger   gamma=0.4  : degraded=0.9375 (dip=+0.0010)  gate=0.9376 (recovered=+0.0002, 17% of dip)  n=5997
+calfw_bigger   gamma=1.8  : degraded=0.9358 (dip=+0.0027)  gate=0.9379 (recovered=+0.0021, 79% of dip)  n=5990
+calfw_bigger   gamma=2.5  : degraded=0.9346 (dip=+0.0038)  gate=0.9391 (recovered=+0.0044, 116% of dip)  n=5975
+calfw_bigger   occlusion40% : degraded=0.9308 (dip=+0.0077)  gate=0.9261 (recovered=-0.0047, -61% of dip)  n=5872
+cplfw_bigger   aligned      : baseline=0.8992  gate=0.9000 (+0.0008)  n=5629
+cplfw_bigger   gamma=0.4  : degraded=0.8921 (dip=+0.0071)  gate=0.8950 (recovered=+0.0029, 41% of dip)  n=5772
+cplfw_bigger   gamma=1.8  : degraded=0.8978 (dip=+0.0014)  gate=0.9061 (recovered=+0.0083, 598% of dip)  n=5198
+cplfw_bigger   gamma=2.5  : degraded=0.8947 (dip=+0.0045)  gate=0.9068 (recovered=+0.0121, 269% of dip)  n=4883
+cplfw_bigger   occlusion40% : degraded=0.8622 (dip=+0.0371)  gate=0.9077 (recovered=+0.0455, 123% of dip)  n=1841
+
+=== face_recognition (threshold=0.8959) ===
+lfw_bigger     aligned      : baseline=0.9757  gate=0.9752 (-0.0005)  n=5997
+lfw_bigger     gamma=0.4  : degraded=0.9640 (dip=+0.0117)  gate=0.9712 (recovered=+0.0072, 61% of dip)  n=6000
+lfw_bigger     gamma=1.8  : degraded=0.9738 (dip=+0.0018)  gate=0.9738 (recovered=-0.0000, -2% of dip)  n=5993
+lfw_bigger     gamma=2.5  : degraded=0.9647 (dip=+0.0110)  gate=0.9737 (recovered=+0.0091, 83% of dip)  n=5980
+lfw_bigger     occlusion40% : degraded=0.8938 (dip=+0.0818)  gate=0.9125 (recovered=+0.0186, 23% of dip)  n=5770
+calfw_bigger   aligned      : baseline=0.8436  gate=0.8401 (-0.0035)  n=5990
+calfw_bigger   gamma=0.4  : degraded=0.8154 (dip=+0.0282)  gate=0.8373 (recovered=+0.0218, 78% of dip)  n=5997
+calfw_bigger   gamma=1.8  : degraded=0.8341 (dip=+0.0095)  gate=0.8402 (recovered=+0.0062, 65% of dip)  n=5990
+calfw_bigger   gamma=2.5  : degraded=0.8177 (dip=+0.0258)  gate=0.8397 (recovered=+0.0219, 85% of dip)  n=5975
+calfw_bigger   occlusion40% : degraded=0.6780 (dip=+0.1656)  gate=0.7590 (recovered=+0.0810, 49% of dip)  n=5872
+cplfw_bigger   aligned      : baseline=0.7082  gate=0.7115 (+0.0033)  n=5629
+cplfw_bigger   gamma=0.4  : degraded=0.6892 (dip=+0.0190)  gate=0.7006 (recovered=+0.0114, 60% of dip)  n=5772
+cplfw_bigger   gamma=1.8  : degraded=0.6978 (dip=+0.0104)  gate=0.7141 (recovered=+0.0163, 157% of dip)  n=5198
+cplfw_bigger   gamma=2.5  : degraded=0.6824 (dip=+0.0258)  gate=0.7180 (recovered=+0.0356, 138% of dip)  n=4883
+cplfw_bigger   occlusion40% : degraded=0.5751 (dip=+0.1332)  gate=0.6763 (recovered=+0.1012, 76% of dip)  n=1841

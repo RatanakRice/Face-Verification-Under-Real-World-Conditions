@@ -1,0 +1,43 @@
+'_bigger' embeddings scorecard generated 2026-09-27T05:58:49
+
+=== arcface ===
+(threshold from LFW_bigger baseline EER: 0.1492)
+lfw_bigger baseline (aligned)       accuracy=0.9913  FAR=0.0083  FRR=0.0090  pairs_scored=6000
+lfw_bigger lighting gamma=0.4       accuracy=0.9907  FAR=0.0097  FRR=0.0090  pairs_scored=6000
+lfw_bigger lighting gamma=1.8       accuracy=0.9913  FAR=0.0083  FRR=0.0090  pairs_scored=6000
+lfw_bigger lighting gamma=2.5       accuracy=0.9910  FAR=0.0090  FRR=0.0090  pairs_scored=6000
+lfw_bigger occlusion block_15_30    accuracy=0.9922  FAR=0.0070  FRR=0.0087  pairs_scored=6000
+lfw_bigger occlusion block_30_30    accuracy=0.9915  FAR=0.0080  FRR=0.0090  pairs_scored=6000
+calfw_bigger baseline (aligned)     accuracy=0.9386  FAR=0.0577  FRR=0.0650  pairs_scored=5997
+calfw_bigger lighting gamma=0.4     accuracy=0.9375  FAR=0.0594  FRR=0.0657  pairs_scored=5997
+calfw_bigger lighting gamma=1.8     accuracy=0.9358  FAR=0.0624  FRR=0.0660  pairs_scored=5997
+calfw_bigger lighting gamma=2.5     accuracy=0.9346  FAR=0.0650  FRR=0.0657  pairs_scored=5997
+calfw_bigger occlusion block_15_30  accuracy=0.9386  FAR=0.0577  FRR=0.0650  pairs_scored=5997
+calfw_bigger occlusion block_30_30  accuracy=0.9340  FAR=0.0637  FRR=0.0684  pairs_scored=5997
+cplfw_bigger baseline (aligned)     accuracy=0.8992  FAR=0.0724  FRR=0.1292  pairs_scored=5775
+cplfw_bigger lighting gamma=0.4     accuracy=0.8923  FAR=0.0807  FRR=0.1347  pairs_scored=5775
+cplfw_bigger lighting gamma=1.8     accuracy=0.8978  FAR=0.0779  FRR=0.1264  pairs_scored=5775
+cplfw_bigger lighting gamma=2.5     accuracy=0.8947  FAR=0.0783  FRR=0.1323  pairs_scored=5775
+cplfw_bigger occlusion block_15_30  accuracy=0.8895  FAR=0.0759  FRR=0.1451  pairs_scored=5775
+cplfw_bigger occlusion block_30_30  accuracy=0.8802  FAR=0.0790  FRR=0.1607  pairs_scored=5775
+
+=== face_recognition ===
+(threshold from LFW_bigger baseline EER: 0.8959)
+lfw_bigger baseline (aligned)       accuracy=0.9755  FAR=0.0250  FRR=0.0240  pairs_scored=6000
+lfw_bigger lighting gamma=0.4       accuracy=0.9640  FAR=0.0357  FRR=0.0363  pairs_scored=6000
+lfw_bigger lighting gamma=1.8       accuracy=0.9738  FAR=0.0267  FRR=0.0257  pairs_scored=6000
+lfw_bigger lighting gamma=2.5       accuracy=0.9647  FAR=0.0363  FRR=0.0343  pairs_scored=6000
+lfw_bigger occlusion block_15_30    accuracy=0.9585  FAR=0.0443  FRR=0.0387  pairs_scored=6000
+lfw_bigger occlusion block_30_30    accuracy=0.9407  FAR=0.0637  FRR=0.0550  pairs_scored=6000
+calfw_bigger baseline (aligned)     accuracy=0.8434  FAR=0.2302  FRR=0.0830  pairs_scored=5997
+calfw_bigger lighting gamma=0.4     accuracy=0.8154  FAR=0.2722  FRR=0.0970  pairs_scored=5997
+calfw_bigger lighting gamma=1.8     accuracy=0.8343  FAR=0.2495  FRR=0.0820  pairs_scored=5997
+calfw_bigger lighting gamma=2.5     accuracy=0.8172  FAR=0.2809  FRR=0.0847  pairs_scored=5997
+calfw_bigger occlusion block_15_30  accuracy=0.7942  FAR=0.2912  FRR=0.1204  pairs_scored=5997
+calfw_bigger occlusion block_30_30  accuracy=0.7640  FAR=0.3272  FRR=0.1447  pairs_scored=5997
+cplfw_bigger baseline (aligned)     accuracy=0.7082  FAR=0.3381  FRR=0.2455  pairs_scored=5775
+cplfw_bigger lighting gamma=0.4     accuracy=0.6894  FAR=0.3845  FRR=0.2368  pairs_scored=5775
+cplfw_bigger lighting gamma=1.8     accuracy=0.6973  FAR=0.3478  FRR=0.2576  pairs_scored=5775
+cplfw_bigger lighting gamma=2.5     accuracy=0.6824  FAR=0.3654  FRR=0.2697  pairs_scored=5775
+cplfw_bigger occlusion block_15_30  accuracy=0.6488  FAR=0.3789  FRR=0.3234  pairs_scored=5775
+cplfw_bigger occlusion block_30_30  accuracy=0.6270  FAR=0.3897  FRR=0.3563  pairs_scored=5775

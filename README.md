@@ -50,21 +50,25 @@ and go under `data/pairs/`.
 All commands assume the repo root as the working directory and the venv
 activated. Full-scale ("`_bigger`") runs over all 13k+ LFW images take
 hours on a CPU-only laptop (see the report's Computational Cost section).
+The "Output file" column is where each script writes its output on a full
+rerun (under `data2/`, not tracked in git); a static copy of each is already
+checked into `results/` so the numbers can be read without rerunning anything.
 
-| Report item | Script | Output file |
-|---|---|---|
-| Table I — clean baseline | `src/run_script/run_scorecard_bigger.py` | `data2/processed/scorecard_bigger.txt` |
-| Table I — lighting degraded/corrected | `src/auto_gamma_correct.py` (correction) + scoring script | `data2/processed/scorecard_lighting_corrected.txt` |
-| Table I — occlusion degraded/mirror-fixed | `src/landmark_mirror_fix.py` (correction) + scoring script | `data2/processed/scorecard_occlusion40.txt`, `scorecard_occlusion_fixed.txt` |
-| Table II — mixed-collection gate test | `src/build_mixdata.py` → `src/quality_gate.py` → scoring script | `data2/processed/scorecard_mixdata.txt` |
-| Table III — McNemar p-values | `src/mcnemar_test.py` | `data2/processed/mcnemar_results.csv` |
-| 8-seed variance check (Run Distributions) | `src/mixdata_variance.py` | `data2/processed/mixdata_variance.json` |
-| Fig. 2 — 8-seed plot | `src/make_figures.py` (reads the file above) | `figures/seed_variance.pdf` |
-| Raw-pixel baseline | `src/raw_pixel_baseline.py` | stdout (see report text) |
-| Alignment-bug diagnosis | `src/diagnose_baseline.py` | `worst_genuine_pairs.png` (contact sheet) |
+| Report item | Script | Output file | Copy in this repo |
+|---|---|---|---|
+| Table I — clean baseline | `src/run_script/run_scorecard_bigger.py` | `data2/processed/scorecard_bigger.txt` | `results/scorecard_bigger.txt` |
+| Table I — lighting degraded/corrected | `src/auto_gamma_correct.py` (correction) + scoring script | `data2/processed/scorecard_lighting_corrected.txt` | `results/scorecard_lighting_corrected.txt` |
+| Table I — occlusion degraded/mirror-fixed | `src/landmark_mirror_fix.py` (correction) + scoring script | `data2/processed/scorecard_occlusion40.txt`, `scorecard_occlusion_fixed.txt` | `results/scorecard_occlusion40.txt`, `results/scorecard_occlusion_fixed.txt` |
+| Table II — mixed-collection gate test | `src/build_mixdata.py` → `src/quality_gate.py` → scoring script | `data2/processed/scorecard_mixdata.txt` | `results/scorecard_mixdata.txt` |
+| Table III — McNemar p-values | `src/mcnemar_test.py` | `data2/processed/mcnemar_results.csv` | `results/mcnemar_results.csv` |
+| 8-seed variance check (Run Distributions) | `src/mixdata_variance.py` | `data2/processed/mixdata_variance.json` | `results/mixdata_variance.json` |
+| Fig. 2 — 8-seed plot | `src/make_figures.py` (reads the file above) | `figures/seed_variance.pdf` | not copied (regenerate from the json) |
+| Raw-pixel baseline | `src/raw_pixel_baseline.py` | stdout (see report text) | not applicable |
+| Alignment-bug diagnosis | `src/diagnose_baseline.py` | `worst_genuine_pairs.png` (contact sheet) | not copied |
 
 Fig. 1 (pipeline schematic) is a hand-drawn diagram, not generated from data;
-there is no script for it.
+there is no script for it. See `results/README.md` for what each copied
+file is and which came from a since-fixed early version of a script.
 
 ### Command order, full pipeline (per dataset, e.g. `lfw_bigger`)
 
@@ -117,8 +121,9 @@ pair lists.
   corrections, quality gate, scoring, statistics).
 - `src/run_script/` — entry points that chain the above over the full
   dataset set.
-- `archive/` — code that is no longer part of the pipeline but is kept for
-  reference, each with a one-line note on what it was.
+- `results/` — static copies of the small output files behind each report
+  table/figure (see `results/README.md`), checked into git so the numbers
+  are visible without rerunning the pipeline.
 - `model/` — pre-trained model weights (not tracked in git; see table above).
 - `data/`, `data2/` — raw/intermediate/processed images and embeddings (not
   tracked in git). `data2/` holds the full-scale (`_bigger`) runs behind the

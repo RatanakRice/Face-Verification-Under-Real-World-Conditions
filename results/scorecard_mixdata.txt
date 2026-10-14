@@ -1,0 +1,9 @@
+=== arcface ===
+lfw_bigger    : baseline=0.9913  mixdata_unfixed=0.9908 (dip=+0.0005)  gate_fixed=0.9908 (change=+0.0000)  coverage=99.2% (n=5953/6000)
+calfw_bigger  : baseline=0.9387  mixdata_unfixed=0.9375 (dip=+0.0012)  gate_fixed=0.9375 (change=+0.0000)  coverage=99.2% (n=5952/6000)
+cplfw_bigger  : baseline=0.9077  mixdata_unfixed=0.9066 (dip=+0.0011)  gate_fixed=0.9049 (change=-0.0017)  coverage=76.2% (n=4573/6000)
+
+=== face_recognition ===
+lfw_bigger    : baseline=0.9756  mixdata_unfixed=0.9521 (dip=+0.0235)  gate_fixed=0.9664 (change=+0.0143)  coverage=99.2% (n=5953/6000)
+calfw_bigger  : baseline=0.8441  mixdata_unfixed=0.8039 (dip=+0.0402)  gate_fixed=0.8273 (change=+0.0234)  coverage=99.2% (n=5952/6000)
+cplfw_bigger  : baseline=0.7181  mixdata_unfixed=0.6917 (dip=+0.0265)  gate_fixed=0.7100 (change=+0.0184)  coverage=76.2% (n=4573/6000)
