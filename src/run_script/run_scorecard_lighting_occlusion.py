@@ -44,7 +44,7 @@ def run_all():
 
             for gamma in GAMMA_VALUES:
                 label = f"{dataset} lighting gamma={gamma}"
-                embeddings_path = EMBEDDINGS_DIR / "lighting" / f"{dataset}_gamma_{gamma}_{model}.json"
+                embeddings_path = EMBEDDINGS_DIR / "lighting" / dataset / f"gamma_{gamma}" / f"{model}.json"
                 result = score_condition(pairs_path, pairs_format, embeddings_path, threshold)
                 lines.append(
                     f"{label:35s} accuracy={result['accuracy']:.4f}  "
