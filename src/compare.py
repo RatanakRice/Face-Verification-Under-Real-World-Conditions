@@ -1,3 +1,12 @@
+"""
+Scores a set of embeddings against a pair list: fits the EER threshold (on
+clean LFW) and reports accuracy, FAR and FRR. Shared by every scoring
+script in this project (imported, not usually run directly).
+
+Input: a pairs file and an embeddings JSON file.
+Output: printed accuracy/FAR/FRR, or an EER threshold for reuse.
+Report section: Methodology / Evaluation Metrics.
+"""
 import argparse
 import json
 import re

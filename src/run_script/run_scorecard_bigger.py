@@ -1,3 +1,13 @@
+"""
+Scores the full-scale ("_bigger") clean baseline and the milder,
+superseded occlusion pilot sizes (block_15_30/block_30_30) from
+data2/embeddings/.
+
+Input: data2/embeddings/ (built by run_embed_bigger.py).
+Output: data2/processed/scorecard_bigger.txt.
+Report section: Table I clean baseline. (The reported 40%-box occlusion
+and lighting-correction rows come from separate scripts -- see README.)
+"""
 import argparse
 from datetime import datetime
 from pathlib import Path

@@ -1,3 +1,11 @@
+"""
+Embeds every full-scale ("_bigger") condition folder under
+data2/processed/ in one pass (both models).
+
+Input: data2/processed/ (aligned/lighting/occlusion folders already built).
+Output: data2/embeddings/, mirroring the input folder layout.
+Report section: entry point behind every "_bigger" result in Table I/II.
+"""
 import argparse
 import os
 from pathlib import Path

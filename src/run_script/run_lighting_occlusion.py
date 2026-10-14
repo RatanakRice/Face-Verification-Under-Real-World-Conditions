@@ -1,3 +1,13 @@
+"""
+Generates the lighting/occlusion degraded conditions under data/processed/
+(the earlier, smaller pilot runs; mild occlusion sizes block_15_30/
+block_30_30, superseded by the 40% box used in the final results).
+
+Input: data/processed/aligned/.
+Output: data/processed/lighting/, data/processed/occlusion/.
+Report section: pilot work behind the occlusion-size retuning described in
+Parameter Settings.
+"""
 from pathlib import Path
 
 from lighting import process_folder as apply_lighting

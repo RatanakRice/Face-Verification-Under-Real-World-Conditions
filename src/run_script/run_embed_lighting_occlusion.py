@@ -1,3 +1,13 @@
+"""
+Embeds the lighting/occlusion condition folders under data/processed/ (the
+earlier, smaller pilot runs -- see run_embed_bigger.py for the full-scale
+"_bigger" equivalent).
+
+Input: data/processed/lighting/, data/processed/occlusion/.
+Output: data/processed/embeddings/.
+Report section: pilot work behind the gamma/occlusion-size decisions in
+Parameter Settings.
+"""
 from pathlib import Path
 
 from embed import load_arcface_model, process_folder as embed_folder

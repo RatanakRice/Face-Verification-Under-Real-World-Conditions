@@ -1,3 +1,11 @@
+"""
+Degrades a folder of aligned face crops with a global gamma shift
+(output = input^gamma on pixels in [0,1]; gamma < 1 brightens).
+
+Input: a folder of aligned crops and one or more --gamma-values.
+Output: one subfolder per gamma value under --output-root.
+Report section: Methodology / Data Processing and Perturbations.
+"""
 import argparse
 from pathlib import Path
 

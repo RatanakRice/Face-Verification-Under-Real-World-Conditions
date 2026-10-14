@@ -1,3 +1,11 @@
+"""
+Embeds a folder of aligned face crops with both models (ArcFace via
+insightface, and face_recognition/dlib).
+
+Input: a folder of aligned crops.
+Output: two JSON files (one per model), mapping filename to embedding vector.
+Report section: Methodology / Models and Feature Representations.
+"""
 import argparse
 import json
 import os

@@ -1,3 +1,13 @@
+"""
+Degrades a folder of aligned face crops by blacking out a randomly sized,
+randomly placed square box on one side of the face (seeded by filename).
+
+Input: a folder of aligned crops, --size-min/--size-max (box size as a
+fraction of width/height; both set to 0.40 for the reported results).
+Output: one subfolder of masked images plus boxes.json (true box
+coordinates per image, used later by landmark_mirror_fix.py).
+Report section: Methodology / Data Processing and Perturbations.
+"""
 import argparse
 import json
 import random

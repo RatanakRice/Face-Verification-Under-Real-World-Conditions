@@ -1,3 +1,17 @@
+"""
+Training-free occlusion correction: fits a RANSAC affine mirror transform
+between visible left/right MediaPipe landmark pairs and pastes the visible
+half of the face over the occluded region, falling back to OpenCV inpainting
+if the fit is unreliable.
+
+Input: a folder of occluded images, the mesh pairing table (--build-pairs
+builds this once from a sample of clean images), and optionally a
+boxes.json of true occluder coordinates (if omitted, find_box() detects the
+occluder itself from its dark pixels -- this is the path quality_gate.py
+uses, since it has no ground-truth box).
+Output: a folder of repaired images.
+Report section: Methodology / Mitigation Methods (mirror-fill).
+"""
 import argparse
 import json
 import random

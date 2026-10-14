@@ -1,3 +1,11 @@
+"""
+Scores the clean LFW/CALFW/CPLFW baseline from data/processed/embeddings/
+(the earlier, smaller pilot run).
+
+Input: data/processed/embeddings/.
+Output: data/processed/scorecard.txt.
+Report section: pilot work preceding Table I's full-scale clean baseline.
+"""
 from datetime import datetime
 from pathlib import Path
 

@@ -1,3 +1,12 @@
+"""
+Detects the face in each raw image with YOLOv8n-face and aligns it onto the
+ArcFace template with a 5-point similarity transform.
+
+Input: a folder of raw images and the YOLOv8n-face checkpoint.
+Output: a folder of aligned face crops (same filenames).
+Report section: Methodology / System Overview; the largest-face selection
+here is also the fix behind the Alignment Bug finding.
+"""
 import argparse
 from pathlib import Path
 

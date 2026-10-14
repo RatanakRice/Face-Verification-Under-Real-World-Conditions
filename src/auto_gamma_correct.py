@@ -1,3 +1,11 @@
+"""
+Training-free lighting correction: estimates the gamma that would bring an
+image's mean brightness to TARGET_MEAN, then applies its inverse.
+
+Input: a folder of (possibly degraded) images.
+Output: a folder of corrected images.
+Report section: Methodology / Mitigation Methods (auto-gamma).
+"""
 import argparse
 from pathlib import Path
 

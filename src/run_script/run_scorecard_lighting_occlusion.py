@@ -1,3 +1,12 @@
+"""
+Scores the lighting/occlusion pilot conditions from data/processed/embeddings/
+(the earlier, smaller pilot run; mild occlusion sizes, superseded by the 40%
+box used in the final results).
+
+Input: data/processed/embeddings/.
+Output: data/processed/scorecard_lighting_occlusion.txt.
+Report section: pilot work behind Parameter Settings.
+"""
 from datetime import datetime
 from pathlib import Path
 
