@@ -18,6 +18,9 @@ __pycache__/
 plan.md
 test/
 
+# Generated figures (reproducible via src/make_figures.py)
+figures/
+
 # Datasets, intermediate pipeline outputs and embeddings (not redistributed:
 # LFW/CALFW/CPLFW have their own terms; see README for where to get them)
 data/
